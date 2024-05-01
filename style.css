@@ -314,6 +314,9 @@ footer p {
     text-decoration: underline;
 }
 
+.mobile {
+    display: none;
+}
 
 @media (width <=1400px) {
     .image img {
@@ -337,6 +340,22 @@ footer p {
     .image {
         top: -40px;
         right: -250px;
+    }
+}
+
+@media (width < 350px) {
+    nav img {
+        max-width: 100px;
+    }
+}
+
+@media (width <= 450px) {
+    .mobile {
+        display: inline-block;
+    }
+    
+    .desktop {
+        display: none;
     }
 }
 
