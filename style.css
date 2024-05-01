@@ -349,7 +349,7 @@ footer p {
     }
 }
 
-@media (min-width < 450px) {
+@media (width < 450px) {
     .mobile {
         display: inline-block;
     }
