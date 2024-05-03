@@ -147,7 +147,8 @@ nav button {
 
 .boxes h1,
 .question h2,
-.question i {
+.question i,
+.content p {
     font-size: clamp(1.15rem, 3.5vw, 1.5rem);
     padding: 10px 0;
 }
@@ -247,10 +248,18 @@ nav button {
     font-weight: 400;
 }
 
+.question-container {
+    margin: 15px 0;
+}
+
+.question-box {
+    margin: 15px 0;
+}
+
 .question {
     min-width: 90%;
     max-width: 700px;
-    margin: 15px 0;
+    margin: 0;
     padding: 1em;
     background-color: hsla(0, 0%, 26%, 0.678);
     position: relative;
@@ -258,9 +267,18 @@ nav button {
     align-items: center;
 }
 
-.question:hover {
+.question:hover,
+.question:active {
     background-color: hsla(0, 0%, 36%, 0.678);
     cursor: pointer;
+}
+
+.active {
+    background-color: hsla(0, 0%, 36%, 0.678);
+}
+
+.transition {
+    transition: all 1s;
 }
 
 .question i {
@@ -318,6 +336,31 @@ footer p {
     display: none;
 }
 
+.content {
+    display: none;
+    background-color: hsla(0, 0%, 26%, 0.678);
+    /* font-size: 1.25rem; */
+    padding: 1em;
+    min-width: 90%;
+    max-width: 700px;
+    padding: 1em;
+    transition: all 1s ease;
+}
+
+.rotate {
+    transform: rotate(45deg);
+    transition: all 0.25s;
+}
+
+.ri-add-line {
+    transition: all 0.25s;
+}
+
+.block {
+    display: block;
+    transition: all 1s ease;
+}
+
 @media (width <=1400px) {
     .image img {
         scale: 0.7;
@@ -353,7 +396,7 @@ footer p {
     .mobile {
         display: inline-block;
     }
-    
+
     .desktop {
         display: none;
     }
@@ -401,4 +444,70 @@ footer button {
     font-weight: 600;
     margin: 40px;
     background-color: hsla(0, 7%, 12%, 0.522) !important;
+}
+
+.sponsor {
+    font-size: 1rem;
+    padding: 0.75em;
+    border-radius: 7px;
+    font-weight: 600;
+    text-align: center;
+    margin: 10px auto;
+    width: 80%;
+    box-shadow: 10px 10px 40px 10px black;
+}
+
+.sponsor-box {
+    padding: 10px;
+    position: fixed;
+    bottom: 10px;
+    display: none;
+    width: 100%;
+    margin: 0 auto;
+    transition: all 0.2s;
+}
+
+
+@keyframes slidedown {
+    from {
+        transform: translateY(-10%);
+    }
+
+    to {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes forSponsor {
+    from {
+        transform: translateY(200%);
+    }
+
+    to {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes forSponsorDown {
+    from {
+        transform: translateY(0%);
+    }
+
+    to {
+        transform: translateY(200%);
+    }
+}
+
+.animate {
+    animation: slidedown 0.5s ease-in-out;
+}
+
+.hover:hover {
+    background-color: hsl(0, 100%, 60%);
+    cursor: pointer;
+}
+
+.transparent:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.6) !important;
 }
